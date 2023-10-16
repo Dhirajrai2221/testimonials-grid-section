@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  color: var(--White);
+}
+
+:root {
+  --Moderateviolet: hsl(263, 55%, 52%);
+  --Moderatevioletlight: hsl(262, 57%, 52%);
+  --Verydarkgrayishblue: hsl(217, 19%, 35%);
+  --Verydarkblackishblue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+
+  --Lightgray: hsl(0, 0%, 81%);
+  --Lightgrayishblue: hsl(210, 46%, 95%);
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 124rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.col {
+  background-color: var(--White);
+  padding: 3rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  box-shadow: 0  0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.profile-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-content img {
+  width: 4rem;
+  border: 2px solid var(--Moderatevioletlight);
+  border-radius: 50%;
+}
+
+.profile-name {
+  font-weight: 500;
+}
+
+.profile-status {
+  font-size: 1.3rem;
+  color: var(--Lightgray);
+}
+
+.subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.des {
+  font-size: 1.3rem;
+  color: var(--Lightgray);
+  line-height: 1.5;
+}
+
+.col-1 {
+  background-color: var(--Moderateviolet);
+  position: relative;
+  z-index: 9999;
+}
+
+.quotation {
+  position: absolute;
+  top: 1rem;
+  right: 8rem;
+  z-index: -1;
+}
+
+.col-1 .profile-content img {
+  border: 2px solid var(--Verydarkblackishblue);
+}
+
+.col-2 {
+  background-color: var(--Verydarkgrayishblue);
+}
+
+.col-3 {
+  color: var(--Verydarkgrayishblue);
+}
+
+.col-4 {
+  background-color: var(--Verydarkblackishblue);
+}
+
+.col-5 {
+  color: var(--Verydarkgrayishblue);
+}
+
+.col-3 .profile-status,
+.col-5 .profile-status {
+  color: var(--Verydarkgrayishblue);
+}
+.col-3 .des,
+.col-5 .des {
+  color: var(--Verydarkgrayishblue);
+}
+
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .col-1 {
+    grid-column: span 2;
+  }
+  .col-4 {
+    grid-column: span 2;
+  }
+
+  .col-5 {
+    grid-column: 4 / -1;
+    grid-row: 1 / 3;
+  }
+}
